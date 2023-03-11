@@ -70,5 +70,7 @@ fn main() {
         info!("Skipped update");
     }
 
-    fs.search_files(false);
+    if let Err(err) = fs.search_files(false) {
+        error!("Error searching files: {}", err);
+    }
 }
